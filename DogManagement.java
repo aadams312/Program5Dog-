@@ -10,16 +10,17 @@ import java.util.Scanner;
 
 public class DogManagement {
 
+    // Arrays to store dog records
     static int[] dogID = new int[12];
     static String[] dogName = new String[12];
     static int[] dogWeight = new int[12];
     static int[] dogAge = new int[12];
-
     static int count = 0;
     
-    //DECLARING SCANNER OBJECT
+    //Declaring scanner object
     static Scanner scn = new Scanner(System.in);
 
+    // Main method
     public static void main(String[] args){
 
         welcome();  
@@ -47,12 +48,12 @@ public class DogManagement {
         System.out.println("Exit Program");
     }
 
-    // Welcome method reqirement
+    // Display welcome message
     public static void welcome(){
         System.out.println("Welcome, this program allows for a care attendant to be able to create, retrieve and update a dog record from the system.");
     }
 
-    // Display method reqirement
+    // Display menu options
     public static int displayPrompt(){
 
         int menuOption = 0;
@@ -78,7 +79,7 @@ public class DogManagement {
 
         return menuOption;
     }
-    // Create dog record method reqirement
+    // Create new dog record 
     public static void createDog(){
 
         System.out.print("Enter dog ID #: ");
@@ -104,7 +105,7 @@ public class DogManagement {
         count++;
     }
     
-    // Display dog record method reqirement
+    // Display dog record(s)
     public static void displayDog(){
 
         for(int i=0; i<count; i++){
@@ -112,7 +113,7 @@ public class DogManagement {
         }
     }
 
-    // Update dog record method reqirement
+    // Update existing dog records
     public static void updateDog(){
         System.out.print("Enter Dog ID to update: ");
     int id = Integer.parseInt(scn.nextLine());
@@ -134,7 +135,7 @@ public class DogManagement {
         }
     }
 }
-    // Extra credit to convert dog record entered by attendant into human years
+    // Extra credit - converts dog age to human years
     public static void convertAge() {
         
         System.out.print("Enter dog ID to convert age to human years: ");
@@ -152,6 +153,7 @@ public class DogManagement {
                 return;
             }
         }
+        scn.close();
     }
     
 }
